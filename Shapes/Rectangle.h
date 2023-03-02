@@ -13,6 +13,9 @@ public:
         const unsigned short p2_y
     );
 
+    int getAreaSize();
+    int getPerimeter();
+
     void virtual draw(HDC& hdc)const override;
 };
 

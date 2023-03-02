@@ -1,6 +1,5 @@
 #include "Triangle.h"
 
-
 TriangleShape::TriangleShape(
     const unsigned short p1_x,
     const unsigned short p1_y,

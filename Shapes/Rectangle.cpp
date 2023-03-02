@@ -1,5 +1,4 @@
 #include "Rectangle.h"
-#include <utility>
 
 RectangleShape::RectangleShape(
     const unsigned short p1_x, 
