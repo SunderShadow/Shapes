@@ -19,6 +19,18 @@ TriangleShape::TriangleShape(
     this->points[2].y = p3_y;
 }
 
+double TriangleShape::getArea()const
+{
+    // Find formula and Implement
+    return 0.;
+}
+
+double TriangleShape::getPermeter()const
+{
+    // Find formula and Implement
+    return 0.;
+}
+
 void TriangleShape::drawShape(HDC& hdc)const
 {
     Polygon(hdc, this->points, 3);

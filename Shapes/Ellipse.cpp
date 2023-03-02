@@ -13,6 +13,27 @@ EllipseShape::EllipseShape(
     this->points.bottom = p2_y;
 }
 
+int EllipseShape::getBoxWidth()const
+{
+    return this->points.right - this->points.left;
+}
+
+int EllipseShape::getBoxHeight()const
+{
+    return this->points.top - this->points.bottom;
+}
+
+double EllipseShape::getArea()const
+{
+    return M_PI * this->getBoxWidth() * this->getBoxHeight();
+}
+
+double EllipseShape::getPermeter()const
+{
+    // Too long formula... nah...
+    return 0.;
+}
+
 void EllipseShape::drawShape(HDC& hdc)const
 {
     Ellipse(hdc, this->points.left, this->points.top, this->points.right, this->points.bottom);

@@ -15,6 +15,9 @@ public:
         const unsigned short p3_y
     );
 
+    double virtual getArea()const override;
+    double virtual getPermeter()const override;
+
     void virtual drawShape(HDC& hdc)const override;
 };
 

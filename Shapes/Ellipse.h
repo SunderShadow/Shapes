@@ -13,6 +13,12 @@ public:
         const unsigned short p2_y
     );
 
+    int getBoxWidth()const;
+    int getBoxHeight()const;
+
+    double virtual getArea()const override;
+    double virtual getPermeter()const override;
+
     void virtual drawShape(HDC& hdc)const override;
 };
 
