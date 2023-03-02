@@ -19,9 +19,7 @@ TriangleShape::TriangleShape(
     this->points[2].y = p3_y;
 }
 
-void TriangleShape::draw(HDC& hdc)const
+void TriangleShape::drawShape(HDC& hdc)const
 {
-    COLORREF prevColor = SetDCBrushColor(hdc, this->color);
     Polygon(hdc, this->points, 3);
-    SetDCBrushColor(hdc, prevColor);
 }

@@ -9,20 +9,20 @@ int main()
 {
     // Shape Offset
     const int X_OFFSET    = 200;
-    const int Y_OFFSET    = 0;
+    const int Y_OFFSET    = 100;
 
     // Shape size
     const int SHAPE_SIZE  = 100;
 
-    // Triangle
+    // Triangle coords
     const int TRIANGLE_X  = 0;
     const int TRIANGLE_Y  = 0;
 
-    // Rectangle
+    // Rectangle coords
     const int RECTANGLE_X = TRIANGLE_X + 200;
     const int RECTANGLE_Y = 0;
 
-    // Polygon
+    // Polygon coords
     const int POLYGON_X   = RECTANGLE_X + 200;
     const int POLYGON_Y   = 0;
     
@@ -54,9 +54,13 @@ int main()
     HDC consoleDC = GetDC(consoleWindow);
     COLORREF color = RGB(255, 255, 255);
 
+    tgl.setColor(RGB(255, 0, 0));
+    rec.setColor(RGB(255, 255, 0));
+    ellipse.setColor(RGB(0, 255, 0));
+
     // Draw section
-    rec.draw(consoleDC);
     tgl.draw(consoleDC);
+    rec.draw(consoleDC);
     ellipse.draw(consoleDC);
 
     // Pause

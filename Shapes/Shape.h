@@ -8,6 +8,7 @@ protected:
 public:
     void setColor(COLORREF color);
 
-    void virtual draw(HDC& hdc)const = 0;
+    void virtual draw(HDC& hdc)const;
+    void virtual drawShape(HDC& hdc)const = 0;
 };
 

@@ -13,9 +13,7 @@ RectangleShape::RectangleShape(
     this->points.bottom = p2_y;
 }
 
-void RectangleShape::draw(HDC& hdc)const
+void RectangleShape::drawShape(HDC& hdc)const
 {
-    COLORREF prevColor = SetDCBrushColor(hdc, this->color);
     FillRect(hdc, &this->points, CreateSolidBrush(this->color));
-    SetDCBrushColor(hdc, prevColor);
 }

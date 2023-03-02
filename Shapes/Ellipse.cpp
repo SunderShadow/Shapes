@@ -13,10 +13,7 @@ EllipseShape::EllipseShape(
     this->points.bottom = p2_y;
 }
 
-void EllipseShape::draw(HDC& hdc)const
+void EllipseShape::drawShape(HDC& hdc)const
 {
-    // Can not handle color
-    COLORREF prevColor = SetDCBrushColor(hdc, this->color);
     Ellipse(hdc, this->points.left, this->points.top, this->points.right, this->points.bottom);
-    SetDCBrushColor(hdc, prevColor);
 }

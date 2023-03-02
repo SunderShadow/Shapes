@@ -1,7 +1,7 @@
 #pragma once
 #include "Shape.h"
 
-class RectangleShape : protected Shape
+class RectangleShape : public Shape
 {
 protected:
     RECT points;
@@ -16,6 +16,6 @@ public:
     int getAreaSize();
     int getPerimeter();
 
-    void virtual draw(HDC& hdc)const override;
+    void virtual drawShape(HDC& hdc)const override;
 };
 

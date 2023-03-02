@@ -15,6 +15,6 @@ public:
         const unsigned short p3_y
     );
 
-    void virtual draw(HDC& hdc)const override;
+    void virtual drawShape(HDC& hdc)const override;
 };
 
