@@ -15,44 +15,49 @@ int main()
     const int SHAPE_SIZE  = 100;
 
     // Triangle coords
-    const int TRIANGLE_X  = 0;
-    const int TRIANGLE_Y  = 0;
+    const int TRIANGLE_X  = X_OFFSET;
+    const int TRIANGLE_Y  = Y_OFFSET;
 
     // Rectangle coords
     const int RECTANGLE_X = TRIANGLE_X + 200;
-    const int RECTANGLE_Y = 0;
+    const int RECTANGLE_Y = TRIANGLE_Y;
 
     // Polygon coords
     const int POLYGON_X   = RECTANGLE_X + 200;
-    const int POLYGON_Y   = 0;
+    const int POLYGON_Y   = RECTANGLE_Y;
     
     RectangleShape rec(
-        X_OFFSET + RECTANGLE_X, 
-        Y_OFFSET + RECTANGLE_Y,
-        X_OFFSET + RECTANGLE_X + SHAPE_SIZE, 
-        Y_OFFSET + RECTANGLE_Y + SHAPE_SIZE
+        RECTANGLE_X, 
+        RECTANGLE_Y,
+        RECTANGLE_X + SHAPE_SIZE, 
+        RECTANGLE_Y + SHAPE_SIZE
     );
 
     TriangleShape tgl(
-        X_OFFSET + TRIANGLE_X, 
-        Y_OFFSET + TRIANGLE_Y,
-        X_OFFSET + TRIANGLE_X + SHAPE_SIZE, 
-        Y_OFFSET + 0,
-        X_OFFSET + TRIANGLE_X,
-        Y_OFFSET + TRIANGLE_Y + SHAPE_SIZE
+        // Left top
+        TRIANGLE_X, 
+        TRIANGLE_Y,
+        
+        // Right top
+        TRIANGLE_X + SHAPE_SIZE, 
+        TRIANGLE_Y,
+
+        // Left bottom
+        TRIANGLE_X,
+        TRIANGLE_Y + SHAPE_SIZE
     );
 
     EllipseShape ellipse(
-        X_OFFSET + POLYGON_X,
-        Y_OFFSET + POLYGON_Y,
-        X_OFFSET + POLYGON_X + SHAPE_SIZE,
-        Y_OFFSET + POLYGON_Y + SHAPE_SIZE
+        POLYGON_X,
+        POLYGON_Y,
+        POLYGON_X + SHAPE_SIZE,
+        POLYGON_Y + SHAPE_SIZE
     );
     
     // Windows GDI init
     HWND consoleWindow = GetConsoleWindow();
-    HDC consoleDC = GetDC(consoleWindow);
-    COLORREF color = RGB(255, 255, 255);
+    HDC consoleDC      = GetDC(consoleWindow);
+    COLORREF color     = RGB(255, 255, 255);
 
     tgl.setColor(RGB(255, 0, 0));
     rec.setColor(RGB(255, 255, 0));
